@@ -10,6 +10,9 @@ module NavigationHelpers
 
     when /^the home\s?page$/
       '/'
+    when /the new main page page/
+      new_main page_path
+
     when /the new test_feature page/
       new_test_feature_path
 
