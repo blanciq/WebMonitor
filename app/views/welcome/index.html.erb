@@ -1,19 +1,25 @@
 <h2>WebMonitor</h2>
 <table class="ranking">
-  <tr>
-    <td>
-      Rank
-    </td>
-    <td>
-      Address
-    </td>
-  </tr>
-  <tr>
-    <td>
-      1
-    </td>
-    <td>
-      <a href="http://just-a-test.com">http://just-a-test.com</a>
-    </td>
-  </tr>
+  <thead>
+    <tr>
+      <th>
+        Name
+      </th>
+      <th>
+        Address
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sites.each do |site| %>
+    <tr>
+      <td>
+        <%= site.name %>
+      </td>
+      <td>
+       <a href="<%= site.url %>"><%= site.url %></a>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
 </table>
