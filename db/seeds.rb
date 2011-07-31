@@ -7,3 +7,4 @@
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
 Site.create(:name => 'Just a test', :url => 'http://just-a-test.com')
+Site.create(:name => 'Wirtualna Polska', :url => 'http://www.wp.pl/')

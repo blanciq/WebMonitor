@@ -35,6 +35,8 @@ gem 'cucumber-rails'
 gem 'capybara'
 gem 'factory_girl_rails'
 gem 'rspec_tag_matchers'
+gem "mocha"
+
 group :test do
   gem "database_cleaner"
 end

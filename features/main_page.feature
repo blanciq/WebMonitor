@@ -7,3 +7,4 @@ Feature: Main Page
     When I open main page 
     Then I should see "WebMonitor"
     And Ranking should be visible
+    And Availability should be visible

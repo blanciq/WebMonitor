@@ -9,3 +9,7 @@ end
 Then /^Ranking should be visible$/ do
   page.should have_css("table[class='ranking']")
 end
+
+Then /^Availability should be visible$/ do
+  page.should have_css("td[class='availability']")
+end
