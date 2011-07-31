@@ -9,7 +9,10 @@
         Address
       </th>
       <th>
-	Availability
+	Available
+      </th>
+      <th>
+	HTML Valid
       </th>
     </tr>
   </thead>
@@ -24,6 +27,9 @@
       </td>
       <td class="availability">
         <%= @sites_availability[site] %>
+      </td>
+      <td class="validity">
+	<%= @sites_validity[site] %>
       </td>
     </tr>
     <% end %>

@@ -8,3 +8,4 @@
 
 Site.create(:name => 'Just a test', :url => 'http://just-a-test.com')
 Site.create(:name => 'Wirtualna Polska', :url => 'http://www.wp.pl/')
+Site.create(:name => 'Gazeta.pl', :url => 'http://www.gazeta.pl/')
