@@ -10,14 +10,14 @@ class ValidateHtmlToolTest < ActiveSupport::TestCase
     site = sites(:one)
     result = sut.getRanks([site])
     print result[site]
-    assert_equal HTMLValidity::VALID, result[site].state
+    assert_equal :ok, result[site]
   end
   
   test "Response'invalid' should result in invalid site" do
     Net::HTTP.expects(:get_response).returns(ResponseInvalid.new)
     site = sites(:one)
     result = sut.getRanks([site])
-    assert_equal HTMLValidity::INVALID, result[site].state
+    assert_equal :error, result[site]
   end
   
   test "Exception during checking should result in empty state" do
@@ -26,7 +26,7 @@ class ValidateHtmlToolTest < ActiveSupport::TestCase
     end
     site = sites(:one)
     result = sut.getRanks([site])
-    assert_equal HTMLValidity::UNKNOWN, result[site].state
+    assert_equal :unknown, result[site]
   end
   
   private

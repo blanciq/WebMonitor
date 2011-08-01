@@ -14,7 +14,8 @@ class CheckAvailabilityTool
   
   def checkAvailability(site)
     begin
-      :ok if (Net::HTTP.get_response URI.parse(site.url)).kind_of? Net::HTTPSuccess
+      response = Net::HTTP.get_response URI.parse(site.url)
+      ((response.kind_of? Net::HTTPSuccess) || (response.kind_of? Net::HTTPRedirection)) ? :ok : :error
     rescue
       :error
     end
