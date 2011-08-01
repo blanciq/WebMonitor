@@ -227,6 +227,17 @@ a.rm, a.com {
 	border:1px solid #eaecec;
 	background-color:#fff;
 }
+
+.content .mainbar table.ranking {
+	text-align: center;
+}
+
+.content .mainbar img.validation-image {
+	width: 20px;
+	height: 20px;
+	border: 0px;
+}
+
 .content .mainbar .article {
 	margin:0 0 20px 0;
 	padding:30px 20px;

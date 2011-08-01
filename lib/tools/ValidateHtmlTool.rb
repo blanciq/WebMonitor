@@ -19,9 +19,9 @@ class ValidateHtmlTool
       xml_data = (Net::HTTP.get_response(url)).body
       doc = REXML::Document.new(xml_data)
       result = REXML::XPath.first(doc, "//m:validity/text()")
-      HTMLValidity.new(result == "true" ? HTMLValidity::VALID : HTMLValidity::INVALID)
+      result == "true" ? :ok : :error
     rescue Exception
-      HTMLValidity.new(HTMLValidity::UNKNOWN)
+      :unknown
     end
   end
 

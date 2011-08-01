@@ -18,10 +18,11 @@ class HTMLValidity
   def to_s
     case @state
       when VALID 
-      "valid"
+        :ok
       when INVALID 
-      "invalid"
-      else "unknown"
+        :ok
+      else 
+        :unknown
     end
   end
 

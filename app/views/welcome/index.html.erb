@@ -9,10 +9,10 @@
         Address
       </th>
       <th>
-	Available
+		Available
       </th>
       <th>
-	HTML Valid
+		HTML Valid
       </th>
     </tr>
   </thead>
@@ -26,10 +26,10 @@
        <a href="<%= site.url %>"><%= site.url %></a>
       </td>
       <td class="availability">
-        <%= @sites_availability[site] %>
+        <%= validation_image @sites_availability[site] %>
       </td>
       <td class="validity">
-	<%= @sites_validity[site] %>
+		<%= validation_image @sites_validity[site] %>
       </td>
     </tr>
     <% end %>
