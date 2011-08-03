@@ -5,9 +5,13 @@ class CheckAvailabilityTool
     
   def getRanks(sites)
     results = sites.map do |site|
-      checkAvailability(site)
+      getRank(site)
     end
     Hash[*sites.zip(results).flatten]
+  end
+
+  def getRank(site)
+    checkAvailability(site)
   end
 
   private
