@@ -421,3 +421,42 @@ ol li textarea {
 ol li .send {
 	margin:16px 0 0 0;
 }
+
+table, th, td {
+	border-color: #C1DAD7; 
+	border-style: solid;
+}
+
+table {
+	width: 600px;
+	padding: 0;
+	margin: 0;
+	border-width: 0 0 1px 1px;
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+th {
+	font: bold 12px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	color: #3f4b52;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	text-align: center;
+	padding: 6px 6px 6px 12px;
+	background: #CAE8EA url('../images/bg_header.jpg') no-repeat;
+	border-width: 1px 1px 0 0;
+}
+
+td {
+	text-align: center;
+	border-width: 1px 1px 0 0;
+	background: #fff;
+	padding: 6px 6px 6px 12px;
+	color: #4f6b72;
+}
+
+
+table#ranking td.alt {
+	background: #F5FAFA;
+	color: #797268;
+}
