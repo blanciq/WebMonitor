@@ -1,5 +1,4 @@
 require 'rexml/document'
-require 'tools/HTMLValidity'
 require 'uri'
 
 class ValidateHtmlTool

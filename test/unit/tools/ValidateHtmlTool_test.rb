@@ -1,6 +1,5 @@
 require 'test_helper'
 require 'tools/ValidateHtmlTool'
-require 'tools/HTMLValidity'
 class ValidateHtmlToolTest < ActiveSupport::TestCase
   
   sut = ValidateHtmlTool.new
