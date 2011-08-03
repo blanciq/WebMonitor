@@ -20,7 +20,7 @@
     <% @sites.each do |site| %>
     <tr>
       <td>
-        <%= site.name %>
+        <%= link_to site.name, site%>
       </td>
       <td>
        <a href="<%= site.url %>"><%= site.url %></a>

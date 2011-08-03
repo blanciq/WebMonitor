@@ -1,0 +1,8 @@
+<h2>Site details</h2>
+
+<h3><%= @site.name %></h3>
+<table>
+  <tr> <td> Address: </td><td><a href="<%= @site.url %>"><%= @site.url %></a> </td></tr>
+  <tr> <td> Availability </td><td class="availability"> <%= validation_image @site_availability %> </td></tr>
+  <tr> <td> HTML Validity </td><td class="html-validity"> <%= validation_image @site_validity %> </td></tr>
+</table>

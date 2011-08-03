@@ -1,0 +1,8 @@
+<h2>WebMonitor</h2>
+
+
+<h3><%= site.name %></h3>
+<ul>
+<li> <a href="<%= site.url %>"><%= site.url %></a>
+<li> Availability: <%= validation_image @sites_availability[site] %>
+<li> HTML Validity: <%= validation_image @sites_validity[site] %>

@@ -6,11 +6,15 @@ class ValidateHtmlTool
   
   def getRanks(sites)
     results = sites.map do |site|
-      validateSite(site)
+      getRank(site)
     end
     Hash[*sites.zip(results).flatten]
   end
   
+  def getRank(site)
+    validateSite(site)
+  end
+
   private
   
   def validateSite(site)
