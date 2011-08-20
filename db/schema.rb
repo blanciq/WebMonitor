@@ -10,11 +10,28 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110730130026) do
+ActiveRecord::Schema.define(:version => 20110819185737) do
+
+  create_table "site_checks", :force => true do |t|
+    t.integer  "site_id"
+    t.integer  "tool_id"
+    t.string   "result"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "sites", :force => true do |t|
     t.string   "name"
     t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.date     "next_check_date"
+    t.integer  "checking_period", :default => 1
+  end
+
+  create_table "tools", :force => true do |t|
+    t.string   "name"
+    t.string   "classname"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

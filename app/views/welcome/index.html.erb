@@ -25,10 +25,10 @@
        <a href="<%= site.url %>"><%= site.url %></a>
       </td>
       <td class="availability">
-        <%= validation_image @sites_availability[site] %>
+        <%= validation_image @sites_checks[site]['availability'].result %>
       </td>
       <td class="validation">
-		<%= validation_image @sites_validity[site] %>
+		<%= validation_image @sites_checks[site]['htmlValidity'].result %>
       </td>
     </tr>
     <% end %>

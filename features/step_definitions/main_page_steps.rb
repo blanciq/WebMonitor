@@ -12,13 +12,13 @@ end
 
 Then /^I should see ranking table with two sites$/ do
   page.should have_css("table[class='ranking']")
-  page.should have_css("tr", :count => 3)
+  page.should have_css("tr", :count => 5)
 end
 
 Then /^Availability should be visible$/ do
-  page.should have_css("td[class='availability']", :count => 2)
+  page.should have_css("td[class='availability']", :count => 4)
 end
 
 Then /^Validation results should be visible$/ do
-  page.should have_css("td[class='validation']", :count => 2)
+  page.should have_css("td[class='validation']", :count => 4)
 end

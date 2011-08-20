@@ -4,8 +4,22 @@ one:
   id: 1
   name: MyName
   url: MyUrl
+  next_check_date: '2006-06-09T10:50:13-0700'
 
 two:
   id: 2
   name: MyString
   url: MyString
+  next_check_date: '2006-06-09T10:50:13-0700'
+
+siteNotCheckedYet:
+  id: 3
+  name: SiteNotCheckedYet
+  url: http://fnord.foo/
+
+siteToBeCheckedInTheFuture:
+  id: 4
+  name: SiteToBeCheckedInTheFuture
+  name: foo
+  url: bar
+  next_check_date: '2050-06-09T10:50:13-0700'

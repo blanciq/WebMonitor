@@ -1,12 +1,12 @@
-require 'tools/CheckAvailabilityTool'
-require 'tools/ValidateHtmlTool'
-
+require 'SiteChecker'
 class SiteController < ApplicationController
   def show
     begin
       @site = Site.find(params[:id])
-      @site_availability = CheckAvailabilityTool.new.getRank(@site)
-      @site_validity = ValidateHtmlTool.new.getRank(@site)
+
+      if(@site != nil)
+        @site_check = @site.getAllLastChecks
+      end
     rescue ActiveRecord::RecordNotFound
       redirect_to welcome_index_path, :notice => "No such site"
     else

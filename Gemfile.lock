@@ -120,6 +120,8 @@ GEM
       nokogiri (>= 1.4.0)
       rspec-rails (>= 1.2.6)
     rubyzip (0.9.4)
+    rufus-scheduler (2.0.10)
+      tzinfo (>= 0.3.23)
     savon (0.9.6)
       akami (~> 1.0)
       builder (>= 2.1.2)
@@ -156,5 +158,6 @@ DEPENDENCIES
   mocha
   rails (= 3.0.5)
   rspec_tag_matchers
+  rufus-scheduler
   savon
   sqlite3
