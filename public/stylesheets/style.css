@@ -236,6 +236,8 @@ a.rm, a.com {
 	width: 20px;
 	height: 20px;
 	border: 0px;
+	margin: auto;
+	float: none;
 }
 
 .content .mainbar .article {
@@ -454,7 +456,6 @@ td {
 	padding: 6px 6px 6px 12px;
 	color: #4f6b72;
 }
-
 
 table#ranking td.alt {
 	background: #F5FAFA;
