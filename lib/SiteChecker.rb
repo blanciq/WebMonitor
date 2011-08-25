@@ -1,5 +1,6 @@
 require 'tools/CheckAvailabilityTool'
 require 'tools/ValidateHtmlTool'
+require 'tools/ValidateCssTool'
 
 class SiteChecker
   

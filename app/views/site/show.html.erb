@@ -5,4 +5,5 @@
   <tr> <td> Address: </td><td><a href="<%= @site.url %>"><%= @site.url %></a> </td></tr>
   <tr> <td> Availability </td><td class="availability"> <%= validation_image @site_check['availability'].result %> </td></tr>
   <tr> <td> HTML Validity </td><td class="html-validity"> <%= validation_image @site_check['htmlValidity'].result %> </td></tr>
+  <tr> <td> CSS Validity </td><td class="css-validity"> <%= validation_image @site_check['cssValidity'].result %> </td></tr>
 </table>
