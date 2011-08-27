@@ -461,3 +461,8 @@ table#ranking td.alt {
 	background: #F5FAFA;
 	color: #797268;
 }
+
+.chart {
+    padding: 0px !important;
+    float: none;
+}

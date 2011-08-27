@@ -12,5 +12,14 @@ class Site < ActiveRecord::Base
     end
     Hash[*(tools.map {|m| m.name}).zip(results).flatten]
   end
+  
+  def getChartData(num_of_checks)
+    tools = Tool.all
+    chartData = tools.each.map do |tool|
+      SiteCheck.where("site_id = ? and tool_id = ?", self.id, tool.id).limit(num_of_checks)
+    end
+    Hash[*(tools.map {|m| m.name}).zip(chartData).flatten(1)]
+  end
+
 
 end

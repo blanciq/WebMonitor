@@ -13,6 +13,8 @@ class SiteControllerTest < ActionController::TestCase
   end
   
   test "show with id parameter of existing site should return success" do
+    Gchart.expects(:bar).times(Tool.all.count).returns("")
+    
     get(:show, {'id' => "1"})
     assert_response :success
   end

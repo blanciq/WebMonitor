@@ -1,5 +1,5 @@
 Before do
-  Fixtures.create_fixtures("test/fixtures", "sites")
+  Gchart.expects(:bar).times(Tool.all.count).returns("")
 end
 
 Then /^I should see the following main pages:$/ do |expected_main_pages_table|
