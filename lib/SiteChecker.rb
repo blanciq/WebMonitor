@@ -14,7 +14,11 @@ class SiteChecker
   def checkSite(site)
     date = DateTime.current
     Tool.all.each do |tool|
+      RAILS_DEFAULT_LOGGER.info("checking site #{site.name} with tool #{tool.name}")
       toolInstance = Kernel.const_get(tool.classname).new
+      if (toolInstance == nil)
+        RAILS_DEFAULT_LOGGER.error("Class #{tool.classname} for #{tool.name} not found!")
+      end
       result = toolInstance.getRank(site)
       SiteCheck.new(:site => site, :tool => tool, :result => result).save!
     end
