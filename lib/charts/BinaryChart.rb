@@ -24,15 +24,19 @@ class BinaryChart
   def get_chart()
     RAILS_DEFAULT_LOGGER.debug("Generating binary chart with checks: #{@checks}")
     values = get_results(@checks)
-    dates = clean_repeating_values(get_dates(@checks))
+   # dates = clean_repeating_values(get_dates(@checks))
+    dates = get_dates(@checks)
     get_chart_url(values, dates)
   end
 
   def get_chart_url(values, dates)
-    Gchart.bar(:data => values ? [values, revert_results(values)] : nil,
+    if(values.length == 0)
+      return nil
+    end
+    Gchart.bar(:data => [values, revert_results(values)],
                :bar_colors => [@positive_color, @negative_color],
                :axis_with_labels => 'x',
-               :axis_labels => dates,
+               :axis_labels => dates ? dates : [""],
                :background => @background_color,
                :size => @size)
   end
