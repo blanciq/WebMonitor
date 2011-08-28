@@ -19,3 +19,7 @@ three:
    name: cssValidity
    classname: ValidateCssTool
 
+four:
+   id: 4
+   name: pageRank
+   classname: PageRankTool

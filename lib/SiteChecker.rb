@@ -1,6 +1,7 @@
 require 'tools/CheckAvailabilityTool'
 require 'tools/ValidateHtmlTool'
 require 'tools/ValidateCssTool'
+require 'tools/PageRankTool'
 
 class SiteChecker
   

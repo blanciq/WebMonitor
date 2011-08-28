@@ -16,6 +16,9 @@
       <th>
 		CSS Valid
       </th>
+      <th>
+        Page Rank
+      </th>
     </tr>
   </thead>
   <tbody>
@@ -35,6 +38,9 @@
       </td>
       <td class="css-validation">
 	<%= validation_image @sites_checks[site]['cssValidity'].result %>
+      </td>
+      <td>
+        <%= @sites_checks[site]['pageRank'].result %>
       </td>
     </tr>
     <% end %>
