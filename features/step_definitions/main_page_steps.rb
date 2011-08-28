@@ -1,7 +1,3 @@
-Before do
-  Gchart.expects(:bar).times(Tool.all.count).returns("")
-end
-
 Then /^I should see the following main pages:$/ do |expected_main_pages_table|
   expected_main pages_table.diff!(tableish('table tr', 'td,th'))
 end

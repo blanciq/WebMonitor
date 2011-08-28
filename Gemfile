@@ -43,4 +43,3 @@ group :test do
 end
 
 gem "rufus-scheduler"
-gem "googlecharts"

@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 require 'rubygems'
-#require 'google_chart'
 
-require 'gchart'
 class BinaryChart
 
   @checks
@@ -24,8 +22,9 @@ class BinaryChart
   def get_chart()
     RAILS_DEFAULT_LOGGER.debug("Generating binary chart with checks: #{@checks}")
     values = get_results(@checks)
-   # dates = clean_repeating_values(get_dates(@checks))
-    dates = get_dates(@checks)
+    dates = clean_repeating_values(get_dates(@checks))
+    #dates = get_dates(@checks)
+    RAILS_DEFAULT_LOGGER.debug("Generating binary chart with dates: #{dates}")
     get_chart_url(values, dates)
   end
 
@@ -33,16 +32,25 @@ class BinaryChart
     if(values.length == 0)
       return nil
     end
-    Gchart.bar(:data => [values, revert_results(values)],
-               :bar_colors => [@positive_color, @negative_color],
-               :axis_with_labels => 'x',
-               :axis_labels => dates ? dates : [""],
-               :background => @background_color,
-               :size => @size)
+    create_google_charts_url(values, dates)
   end
 
-  
-  
+  def create_google_charts_url(values, labels)
+    data = values.join(",")
+    reversed_data = revert_results(values).join(",")
+    x_labels = "|" + labels.join("|")
+    base_url="https://chart.googleapis.com/chart?"
+    base_url << "&chs=#{@size}"
+    base_url << "&cht=bvs"
+    base_url << "&chco=#{@positive_color},#{@negative_color}"
+    base_url << "&chxt=x"
+    base_url << "&chxl=0:#{x_labels}"
+    base_url << "&chd=t:#{data}|#{reversed_data}"
+    base_url << "&chds=0,1"
+    base_url << "&chxs=0,,10,0,t"
+    base_url
+  end
+
   def clean_repeating_values(coll)
     (coll.uniq.map do |el|
        [el].concat(Array.new( coll.count(el) - 1, ''))
