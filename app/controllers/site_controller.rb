@@ -1,5 +1,9 @@
 require 'SiteChecker'
 class SiteController < ApplicationController
+  include Clearance::Authentication
+  
+  before_filter :authorize
+  
   def show
     begin
       @site = Site.find(params[:id])
@@ -14,5 +18,9 @@ class SiteController < ApplicationController
         format.html
       end
     end
+  end
+  
+  def custom_sites
+    @current_user = current_user
   end
 end
