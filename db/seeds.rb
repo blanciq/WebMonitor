@@ -33,4 +33,6 @@ sites = Site.create([
 
 tools = Tool.create([
   { :name => "htmlValidity", :classname => "ValidateHtmlTool"},
-  { :name => "availability", :classname => "CheckAvailabilityTool"}])
+  { :name => "cssValidity", :classname => "ValidateCssTool"},
+  { :name => "availability", :classname => "CheckAvailabilityTool"},
+  { :name => "pageRank", :classname => "PageRankTool"}])

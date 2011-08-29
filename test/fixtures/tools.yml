@@ -14,3 +14,12 @@ two:
    name: availability
    classname: CheckAvailabilityTool
 
+three:
+   id: 3
+   name: cssValidity
+   classname: ValidateCssTool
+
+four:
+   id: 4
+   name: pageRank
+   classname: PageRankTool

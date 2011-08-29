@@ -1,7 +1,3 @@
-Before do
-  Fixtures.create_fixtures("test/fixtures", "sites")
-end
-
 Then /^I should see the following main pages:$/ do |expected_main_pages_table|
   expected_main pages_table.diff!(tableish('table tr', 'td,th'))
 end
