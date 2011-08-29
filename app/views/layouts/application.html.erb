@@ -11,20 +11,19 @@
   <div class="header">
     <div class="header_resize">
       <div class="logo">
-        <h1><a href="index.html">Web<span>Monitor</span></a></h1>
+        <h1><%= link_to raw("Web<span>Monitor</span>"), "/" %></h1>
       </div>
       <div class="menu_nav">
         <ul>
-          <li class="active"><a href="index.html"><span>Home</span></a></li>
-          <li><a href="support.html"><span>Support</span></a></li>
-          <li><a href="about.html"><span>About Us</span></a></li>
-          <li><a href="blog.html"><span>Blog</span></a></li>
-          <li><a href="contact.html"><span>Contact Us</span></a></li>
+          <li><%= link_to raw("<span>Home</span>"), "/" %></li>
+          <% if current_user != nil %>
+          <li><%= link_to raw("<span>My sites</span>"), { :controller => "site", :action => "custom_sites"} %>
+          <% end %>
           <li>
             <% if signed_in? -%>
-		      <%= link_to "Sign out", sign_out_path, :method => :delete %>
+		      <%= link_to raw("<span>Sign out</span>"), sign_out_path, :method => :delete %>
 		    <% else -%>
-		      <%= link_to "Sign in", sign_in_path %>
+		      <%= link_to raw("<span>Sign in</span>"), sign_in_path %>
 		    <% end -%>
 		  </li>     
           </li>
@@ -67,11 +66,10 @@
           <h2>Sidebar Menu</h2>
           <div class="clr"></div>
           <ul class="sb_menu">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">TemplateInfo</a></li>
-            <li><a href="#">Style Demo</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Archives</a></li>
+            <li><%= link_to "Home", "/" %></li>
+            <% if current_user != nil %>
+            <li><%= link_to "My sites", { :controller => "site", :action => "custom_sites"} %></li>
+            <% end %>
           </ul>
         </div>
         <div class="gadget">

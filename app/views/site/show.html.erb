@@ -3,16 +3,16 @@
 <h3><%= @site.name %></h3>
 <table>
   <tr> <td> Address: </td><td><a href="<%= @site.url %>"><%= @site.url %></a> </td></tr>
-  <tr> <td> Availability </td><td class="availability"> <%= validation_image @site_check['availability'].result %> </td></tr>
-  <tr> <td> HTML Validity </td><td class="html-validity"> <%= validation_image @site_check['htmlValidity'].result %> </td></tr>
-  <tr> <td> CSS Validity </td><td class="css-validity"> <%= validation_image @site_check['cssValidity'].result %> </td></tr>
-  <tr> <td> Page Rank </td><td> <%= @site_check['pageRank'].result %> </td></tr>
+  <tr> <td> Availability </td><td class="availability"> <%= validation_image @site_check['availability'] %> </td></tr>
+  <tr> <td> HTML Validity </td><td class="html-validity"> <%= validation_image @site_check['htmlValidity'] %> </td></tr>
+  <tr> <td> CSS Validity </td><td class="css-validity"> <%= validation_image @site_check['cssValidity'] %> </td></tr>
+  <tr> <td> Page Rank </td><td> <%= @site_check['pageRank'].result if @site_check['pageRank'] != nil %> </td></tr>
 </table>
 <br/>
 
 <h4>Availability:</h4>
-<%= binary_chart "Availability", @chart_data['availability']%>
+<%= binary_chart "Availability", @chart_data['availability'] %>
 <h4>HTML Validity:</h4>
 <%= binary_chart "HTML Validity", @chart_data['htmlValidity']%>
 <h4>CSS Validity:</h4>
-<%= binary_chart "CSS Validity", @chart_data['cssValidity']%>
+<%= binary_chart "CSS Validity", @chart_data['cssValidity'] %> 

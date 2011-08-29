@@ -22,6 +22,10 @@ class SiteController < ApplicationController
   end
   
   def custom_sites
-    @current_user = current_user
+    @sites = current_user.sites
+    results = @sites.map do |site|
+      site.getAllLastChecks
+    end
+    @sites_checks = Hash[*@sites.zip(results).flatten]
   end
 end

@@ -2,6 +2,10 @@ class Site < ActiveRecord::Base
   has_many :site_checks
   belongs_to :user
   
+  def self.getPublicSites
+    Site.where("user_id is null")
+  end
+  
   def self.getSiteToBeChecked
     Site.order("next_check_date").limit(1).first
   end

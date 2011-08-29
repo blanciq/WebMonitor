@@ -1,0 +1,50 @@
+<table class="ranking">
+  <thead>
+    <tr>
+      <th>
+        Name
+      </th>
+      <th>
+        Address
+      </th>
+      <th>
+		Available
+      </th>
+      <th>
+		HTML Valid
+      </th>
+      <th>
+		CSS Valid
+      </th>
+      <th>
+        Page Rank
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% sites.each do |site| %>
+    <tr>
+      <td>
+        <%= link_to site.name, { :controller => "site", :action => "show", :id => site.id } %>
+      </td>
+      <td>
+       <a href="<%= site.url %>"><%= site.url %></a>
+      </td>
+      <td class="availability">
+        <%= validation_image @sites_checks[site]['availability'] %>
+      </td>
+      <td class="validation">
+		<%= validation_image @sites_checks[site]['htmlValidity'] %>
+      </td>
+      <td class="css-validation">
+		<%= validation_image @sites_checks[site]['cssValidity'] %>
+      </td>
+      <td>
+      	<% if @sites_checks[site]['pageRank'] != nil %>
+        	<%= @sites_checks[site]['pageRank'].result%>
+        <% end %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

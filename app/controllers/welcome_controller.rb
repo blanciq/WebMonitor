@@ -3,11 +3,11 @@ require 'SiteChecker'
 class WelcomeController < ApplicationController
  
   def index
-    @sites = Site.all
-    results = @sites.map do |site|
+    @publicSites = Site.getPublicSites
+    results = @publicSites.map do |site|
       site.getAllLastChecks
     end
-    @sites_checks = Hash[*@sites.zip(results).flatten]
+    @sites_checks = Hash[*@publicSites.zip(results).flatten]
   end
   
   def update
