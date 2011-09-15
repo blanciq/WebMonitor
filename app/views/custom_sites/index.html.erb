@@ -1,0 +1,8 @@
+<%= render :partial => "shared/sites", :locals => { :sites => @sites, :sites_checks => @sites_checks }%>
+<p>
+<form action="/custom_sites/add" method="get">
+	  <%= text_field_tag :name %>
+	  <%= text_field_tag :url %>
+	  <input name="commit" type="submit" value="Add new" />
+</form>
+</p>

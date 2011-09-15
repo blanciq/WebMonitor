@@ -2,3 +2,6 @@ test:
   id: 1
   email: test@test.com
   
+bob:
+  id: 2
+  email: bob@bob.com  

@@ -5,6 +5,6 @@ Feature: Main Page
   
   Scenario: User opens the main page
     When I open main page 
-    Then I should see ranking table with two sites
+    Then I should see ranking table with four sites
     And Availability should be visible
     And Validation results should be visible

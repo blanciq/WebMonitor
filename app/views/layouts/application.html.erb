@@ -17,7 +17,7 @@
         <ul>
           <li><%= link_to raw("<span>Home</span>"), "/" %></li>
           <% if current_user != nil %>
-          <li><%= link_to raw("<span>My sites</span>"), { :controller => "site", :action => "custom_sites"} %>
+          <li><%= link_to raw("<span>My sites</span>"), { :controller => "custom_sites", :action => "index"} %>
           <% end %>
           <li>
             <% if signed_in? -%>
@@ -68,7 +68,7 @@
           <ul class="sb_menu">
             <li><%= link_to "Home", "/" %></li>
             <% if current_user != nil %>
-            <li><%= link_to "My sites", { :controller => "site", :action => "custom_sites"} %></li>
+            <li><%= link_to "My sites", { :controller => "custom_sites", :action => "index"} %></li>
             <% end %>
           </ul>
         </div>

@@ -1,10 +1,7 @@
 require 'SiteChecker'
 require 'charts/BinaryChart'
 class SiteController < ApplicationController
-  include Clearance::Authentication
-  
-  before_filter :authorize
-  
+ 
   def show
     begin
       @site = Site.find(params[:id])
@@ -21,11 +18,4 @@ class SiteController < ApplicationController
     end
   end
   
-  def custom_sites
-    @sites = current_user.sites
-    results = @sites.map do |site|
-      site.getAllLastChecks
-    end
-    @sites_checks = Hash[*@sites.zip(results).flatten]
-  end
 end

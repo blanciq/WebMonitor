@@ -20,6 +20,19 @@ siteNotCheckedYet:
 siteToBeCheckedInTheFuture:
   id: 4
   name: SiteToBeCheckedInTheFuture
-  name: foo
   url: bar
   next_check_date: '2050-06-09T10:50:13-0700'
+  
+bobsCustomSite:
+  id: 5
+  name: bobs-site
+  url: http:/bobs-site.com/
+  next_check_date: '2050-06-09T10:50:13-0700'
+  user: bob
+
+otherBobsCustomSite:
+  id: 6
+  name: uncle-bobs-site
+  url: http:/some-url.com/
+  next_check_date: '2050-06-09T10:50:13-0700'
+  user: bob

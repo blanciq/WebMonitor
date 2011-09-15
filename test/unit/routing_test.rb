@@ -3,10 +3,10 @@ require './config/routes.rb'
 
 class RoutingTest < ActionController::TestCase
   test "PathToCustomSiteShouldRunCustomSiteAction" do
-    assert_recognizes({"controller" => "site", "action" => "custom_site"}, "/site/custom_site")
+    assert_recognizes({"controller" => "custom_sites", "action" => "index"}, "/custom_sites")
   end 
   
   test "SiteCustomSiteShouldGenerateProperPath" do
-    assert_generates("/site/custom_site", :controller => "site", :action => "custom_site")
+    assert_generates("/custom_sites", :controller => "custom_sites", :action => "index")
   end
 end
