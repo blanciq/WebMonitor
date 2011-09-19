@@ -4,7 +4,6 @@ class CustomSitesController < ApplicationController
   before_filter :authorize
   
   def index
-    @site = Site.new
     @sites = current_user.sites
     results = @sites.map do |site|
       site.getAllLastChecks
@@ -13,11 +12,8 @@ class CustomSitesController < ApplicationController
   end
   
   def add
-    @site = Site.new
-    @site.name = "asda"
-    @site.url = "asda"
-    @site.user = current_user
-    Site.create(@site)    
+    site = Site.new(:name => params[:name], :url => params[:url], :user => current_user)
+    site.save    
     redirect_to "/custom_sites"
   end
 end
